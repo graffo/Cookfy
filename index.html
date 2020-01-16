@@ -1,0 +1,255 @@
+<!doctype html>
+<html ⚡ lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <!-- Import other AMP Extensions here -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700&display=swap" rel="stylesheet">
+   
+   <style amp-custom>
+        /* Inicio reset */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 100%;
+          font: inherit;
+          vertical-align: baseline;
+          font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+          display: block;
+        }
+        body {
+          line-height: 1;
+        }
+        ol, ul {
+          list-style: none;
+        }
+        blockquote, q {
+          quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+          content: '';
+          content: none;
+        }
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+        }
+        a{
+          text-decoration: none;
+        }
+        span{
+          font-family: inherit;
+        }
+        /* Fim reset */
+
+      /* header */
+      header{
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #ffdbbc;
+      }
+      header .content{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 25px 60px;
+      }
+      h1{
+        font-family: PlayfairDisplay;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1.32;
+        color: #000000;
+        float: left;
+        
+      }
+      h1 span {
+        color: #e82147;
+        
+      }
+
+      .busca{
+        width: 386px;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        padding: 0px 20px;
+        float: left;
+        margin-left: 13%;
+            
+      }
+     .palavra-chave{
+       border: none;
+       width: 85%;
+       height: 38px;
+       font-size: 14px;
+       color: lightslategrey;
+       font-weight: bold;
+     }
+     button{
+       float: right;
+       height: 24px;
+       width: 24px;
+       background: url("assets/Lupa@2x.png") no-repeat;
+       border: none;
+       margin-top: 8px;
+     }
+
+     .perfil_link{
+        float: right;
+        width: 200px;
+        color: #e82147;
+        vertical-align: middle;
+     }
+     .nome{
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: bold;
+        float: right;
+        line-height: 60px;
+        margin-right: 15px;
+      
+     }
+     .foto {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        background-color: #e82147;
+        padding: 10px;
+        float: right;
+      }
+      .receita{
+        display: block;
+        background: url('./assets/Elemento_1.png') no-repeat center right;
+        width: 560px;
+        margin: 100px auto;
+        min-height: 221px;
+        position: relative;
+      }
+      .saudacao{
+        float: left;
+        font-size: 28px;
+        font-family: PlayfairDisplay;
+        font-weight: bold;
+      }
+      .saudacao span{
+        color: #e82147;
+      }
+      .info_receita{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .info_receita span{
+        color: #e82147;
+      }
+      .prato{
+        padding: 15px 22px;
+        width: 280px;
+        float: right;
+        height: 200px;
+      }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+ 
+    <link rel="canonical" href=".">
+    <title>Cookfy</title>
+  </head>
+
+  <body>
+
+      <header>
+          <div class="content">
+            <main>
+              <h1>Cook<span>fy</span></h1>
+
+              <div class="busca">
+                  <input type="text" class="palavra-chave" placeholder="Pesquise alguma receita">
+                  <button></button>
+              </div>
+
+              <a href="#" class="perfil_link" on="tap:sidebar1" >
+                <div class="foto">
+                  <amp-img
+                    alt="Mariana"
+                    src="./assets/Avatar_feminino.png"
+                    width="60"
+                    height="60"
+                    layout="responsive"
+                  >
+                  </amp-img>
+                </div>
+                <div class="nome">Marina</div>
+              </a>
+            </main>
+
+            <div class="receita">
+
+              <div class="saudacao">
+                Bem Vinda de volta</br>
+                <span>Marina Wedderhof</span>
+
+                <div class="info_receita">
+                  Contribuição da Comunidade:  </br>
+                  Ceviche de peixe branco </br>
+                  <span>Por Michel Felipe</span>
+                </div>
+              </div>
+
+              <div class="prato">
+                <amp-img
+                  alt="Mariana"
+                  src="./assets/prato.jpg"
+                  width="225"
+                  height="180"
+                  layout="responsive"
+                ></amp-img>
+              </div>
+
+            </div>
+
+            
+
+
+          </div>
+      </header>
+      
+      <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
+        <ul>
+          <li>Nav item 1</li>
+          <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
+          <li>Nav item 3</li>
+          <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
+          <li>Nav item 5</li>
+          <li>Nav item 6</li>
+        </ul>
+      </amp-sidebar>
+
+  </body>
+</html>
