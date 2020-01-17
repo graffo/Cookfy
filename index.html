@@ -6,9 +6,13 @@
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Import other AMP Extensions here -->
+
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-    <!-- Import other AMP Extensions here -->
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+   
+
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700&display=swap" rel="stylesheet">
    
    <style amp-custom>
@@ -145,7 +149,7 @@
         display: block;
         background: url('./assets/Elemento_1.png') no-repeat center right;
         width: 560px;
-        margin: 100px auto;
+        margin: 100px auto 54px;
         min-height: 221px;
         position: relative;
       }
@@ -154,6 +158,7 @@
         font-size: 28px;
         font-family: PlayfairDisplay;
         font-weight: bold;
+        padding-top: 15px;
       }
       .saudacao span{
         color: #e82147;
@@ -161,9 +166,11 @@
       .info_receita{
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: 25px;
         font-size: 12px;
         font-weight: bold;
+        line-height: 16px;
+        
       }
       .info_receita span{
         color: #e82147;
@@ -173,6 +180,7 @@
         width: 280px;
         float: right;
         height: 200px;
+        text-align: center;
       }
     </style>
 
@@ -193,7 +201,25 @@
                   <input type="text" class="palavra-chave" placeholder="Pesquise alguma receita">
                   <button></button>
               </div>
-
+              
+              <script>
+              
+                
+                    fetch('https://uinames.com/api/?ext&region=brazil')
+                    .then((response) => {
+                      return response.json();
+                    })
+                    .then((uinames) => {
+                      
+                      document.getElementById("nome").innerHTML = uinames.name,
+                      document.getElementById("nome_c").innerHTML = uinames.name+' '+uinames.surname;  
+                      
+                    });
+                  
+              </script>
+         
+           
+            
               <a href="#" class="perfil_link" on="tap:sidebar1" >
                 <div class="foto">
                   <amp-img
@@ -205,15 +231,26 @@
                   >
                   </amp-img>
                 </div>
-                <div class="nome">Marina</div>
+                <div class="nome"><span id="nome"></span></div>
               </a>
+              <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
+                <ul>
+                  <li>Nav item 1</li>
+                  <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
+                  <li>Nav item 3</li>
+                  <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
+                  <li>Nav item 5</li>
+                  <li>Nav item 6</li>
+                </ul>
+              </amp-sidebar>
+              
             </main>
 
             <div class="receita">
 
               <div class="saudacao">
                 Bem Vinda de volta</br>
-                <span>Marina Wedderhof</span>
+                <span id="nome_c"></span>
 
                 <div class="info_receita">
                   Contribuição da Comunidade:  </br>
@@ -228,7 +265,6 @@
                   src="./assets/prato.jpg"
                   width="225"
                   height="180"
-                  layout="responsive"
                 ></amp-img>
               </div>
 
@@ -240,16 +276,7 @@
           </div>
       </header>
       
-      <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
-        <ul>
-          <li>Nav item 1</li>
-          <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
-          <li>Nav item 3</li>
-          <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
-          <li>Nav item 5</li>
-          <li>Nav item 6</li>
-        </ul>
-      </amp-sidebar>
+     
 
   </body>
 </html>
