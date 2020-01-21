@@ -90,6 +90,7 @@
         max-width: 1120px;
         margin: 0 auto;
         padding: 50px 60px;
+        position: relative;
       }
       h1{
         font-family: PlayfairDisplay;
@@ -241,8 +242,9 @@
         background: #fff;
       }
       main{
-        width: 780px;
+        width: 960px;
         margin: 80px auto;
+        
       }
       h2{
         
@@ -293,7 +295,7 @@
         position: relative;
         box-shadow: 0 5px 5px 0 #797979;
         float: left;
-        width: 440px;
+        width: 550px;
         margin-right: 60px;
         height: 240px;
         overflow: hidden;
@@ -337,19 +339,25 @@
       }
       .prato_hover{
         background: #fff url('assets/Seta_direita.png') 10px center no-repeat;
-        width: 53%;
+        width: 94%;
         color: var(--lipstick);
         font-size: 14px;
-        padding-left: 25px;
+        padding-left: 35px;
         line-height: 50px;
         position: absolute;
-        bottom: 0;
+        bottom: 0px;
         left: 0;
         z-index: 9999999;
         text-align: left;
         opacity: 0;
       }
+      .prato_content:hover .prato_hover{
+        transition:opacity 1s;
+        opacity:1;
+      }
+
      
+
       .faixa{
         background: url('assets/Elemento_5@2x.png') no-repeat bottom center;
         width: 100%;
@@ -360,6 +368,22 @@
       .previa{
         width: 200px;
         float: left;
+      }
+      .previa button{
+        border: solid 0.5px #f0f0f0;
+        background-color: var(--white);
+        color: #a19b9b;
+        width: 100%;
+        margin: 10px 0;
+        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0);
+        font-family: PlayfairDisplay;
+        font-size: 16px;
+      font-weight: bold;
+      }
+      .previa button:hover{
+        color: var(--lipstick);
+        border-color:  var(--lipstick);
+        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.16)
       }
       .previa_g{
         width: 550px;
@@ -378,7 +402,7 @@
       <header>
           <div class="content">
             <div class="adorno"></div>
-            <main>
+           
               <h1>Cook<span>fy</span></h1>
 
               <div class="busca">
@@ -442,7 +466,7 @@
                 O
               </amp-sidebar>
               
-            </main>
+           
 
             <div class="receita">
 
@@ -501,16 +525,17 @@
           >
           
           <div class="item">
-            <div class="prato_hover">
-              Ver Foto
-            </div>
               <div class="prato_content">
                 <amp-img src="photos/Sandwich.jpg"
-                  width="768"
-                  height="460"
+                  width="550"
+                  height="200"
                   layout="responsive"
+                  heights="(min-width:500px) 250px, 60%"
                   alt="Sandwich">
                 </amp-img>
+                <div class="prato_hover">
+                  Ver Foto
+                </div>
               </div>
 
               <div class="prato_txt">
@@ -540,6 +565,9 @@
                   layout="responsive"
                   alt="Sandwich">
                 </amp-img>
+                <div class="prato_hover">
+                  Ver Foto
+                </div>
               </div>
 
               <div class="prato_txt">
@@ -572,11 +600,11 @@
           <div class="previa">
             <button on="tap:carousel-with-preview.goToSlide(index=0)">
               <amp-img
-                src="assets/Cozinha.jpg"
-                width="60"
-                height="40"
-                alt="apples"
-              ></amp-img>
+                src="assets/Cozinha.svg"
+                width="30"
+                height="30"
+                alt="cozinha"
+              ></amp-img>Cozinha
             </button>
             <button on="tap:carousel-with-preview.goToSlide(index=1)">
               <amp-img
@@ -611,14 +639,14 @@
               alt="apples"
             ></amp-img>
             <amp-img
-              src="/static/inline-examples/images/image2.jpg"
+              src="photos/Cozinha.jpg"
               width="450"
               height="300"
               layout="responsive"
               alt="lemons"
             ></amp-img>
             <amp-img
-              src="/static/inline-examples/images/image3.jpg"
+              src="photos/Cozinha.jpg"
               width="450"
               height="300"
               layout="responsive"
