@@ -6,12 +6,13 @@
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    
+    
     <!-- Import other AMP Extensions here -->
 
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-   
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:400,700&display=swap" rel="stylesheet">
    
@@ -68,16 +69,27 @@
         }
         /* Fim reset */
 
+        :root {
+          --lipstick: #e82147;
+          --white: #fff;
+        }
+
+        .amp-carousel-slide {
+        opacity:0;
+        }
+        .amp-carousel-slide[aria-hidden=false] {
+        transition:opacity 2s;
+        opacity:1;
+        }
       /* header */
       header{
         width: 100%;
-        padding: 10px 20px;
         background-color: #ffdbbc;
       }
       header .content{
-        max-width: 960px;
+        max-width: 1120px;
         margin: 0 auto;
-        padding: 25px 60px;
+        padding: 50px 60px;
       }
       h1{
         font-family: PlayfairDisplay;
@@ -89,12 +101,12 @@
         
       }
       h1 span {
-        color: #e82147;
+        color:var(--lipstick);
         
       }
 
       .busca{
-        width: 386px;
+        width: 586px;
         height: 40px;
         border-radius: 20px;
         box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
@@ -102,7 +114,6 @@
         padding: 0px 20px;
         float: left;
         margin-left: 13%;
-            
       }
      .palavra-chave{
        border: none;
@@ -112,7 +123,7 @@
        color: lightslategrey;
        font-weight: bold;
      }
-     button{
+     .lupa{
        float: right;
        height: 24px;
        width: 24px;
@@ -124,7 +135,7 @@
      .perfil_link{
         float: right;
         width: 200px;
-        color: #e82147;
+        color: var(--lipstick);
         vertical-align: middle;
      }
      .nome{
@@ -141,27 +152,28 @@
         height: 40px;
         border-radius: 50px;
         box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
-        background-color: #e82147;
+        background-color: var(--lipstick);
         padding: 10px;
         float: right;
+        overflow: hidden;
       }
       .receita{
         display: block;
         background: url('./assets/Elemento_1.png') no-repeat center right;
-        width: 560px;
+        width: 780px;
         margin: 100px auto 54px;
-        min-height: 221px;
+        min-height: 260px;
         position: relative;
       }
       .saudacao{
         float: left;
-        font-size: 28px;
+        font-size: 3em;
         font-family: PlayfairDisplay;
         font-weight: bold;
         padding-top: 15px;
       }
       .saudacao span{
-        color: #e82147;
+        color: var(--lipstick);
       }
       .info_receita{
         position: absolute;
@@ -173,14 +185,185 @@
         
       }
       .info_receita span{
-        color: #e82147;
+        color: var(--lipstick);
       }
       .prato{
-        padding: 15px 22px;
-        width: 280px;
+        width: 266px;
         float: right;
-        height: 200px;
+        height: 220px;
         text-align: center;
+        position: relative;
+        right: 10px;
+      }
+      #prato_hover{
+        background: #fff url('assets/Seta_direita.png') 10px center no-repeat;
+        width: 91%;
+        color: var(--lipstick);
+        font-size: 14px;
+        padding-left: 24px;
+        line-height: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9999999;
+        text-align: left;
+        opacity: 0;
+      }
+      .prato:hover #prato_hover{
+        transition:opacity 1s;
+        opacity:1;
+      }
+      .adorno{
+        background: url('assets/Elemento_2.png');
+        position: absolute;
+        width: 138px;
+        height: 137px;
+        top: 39%;
+        left: 10%;
+      }
+      .quote-bg{
+        width: 100%;        
+        height: 100%;
+        opacity: 0.73;
+        background-color: #7c7878;
+        position: relative;
+        z-index: 1;
+      }
+      .quote-content{
+        width: 730px;
+        border: 10px solid #797979;
+        min-height: 220px;
+        opacity: 1;
+        position: fixed;
+        top: 25%;
+        left: 15%;
+        z-index: 2;
+        background: #fff;
+      }
+      main{
+        width: 780px;
+        margin: 80px auto;
+      }
+      h2{
+        
+        font-family: PlayfairDisplay;
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      #carrossel{
+        margin: 60px auto;
+        width: 100%;
+      }
+      .item{
+        position: relative;
+      }
+      .amp-carousel-button{
+        width: 30px;
+        height: 30px;
+        border-radius: 16.5px;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        background-color: var(--white);
+      }
+      
+      .amp-carousel-button-prev {
+        left: 64%;
+        top: 90%;
+        background-image: url('assets/Seta_esquerda.svg') ;
+        background-repeat: no-repeat;
+        background-size: 40%;
+      }
+      .amp-carousel-button-next {
+        right: 27%;
+        top: 90%;
+        background-image: url('assets/Seta_direita.svg') ;
+        background-repeat: no-repeat;
+        background-size: 40%;
+      }
+      .amp-carousel-button-prev:hover{
+        background-color: var(--lipstick);
+        background-image: url('assets/Seta_esquerda_b.svg');
+      }
+      .amp-carousel-button-next:hover{
+        background-color: var(--lipstick);
+        background-image: url('assets/Seta_direita_b.svg');
+      }
+      .prato_content{
+        position: relative;
+        box-shadow: 0 5px 5px 0 #797979;
+        float: left;
+        width: 440px;
+        margin-right: 60px;
+        height: 240px;
+        overflow: hidden;
+        vertical-align: middle;
+        position: relative;
+        z-index: 0;
+      }
+      .prato_txt{
+        font-weight: bold;
+        text-align: left;
+        color:var(--lipstick);
+      
+        font-size: 0.8em;
+      }
+      .prato_txt h3{
+        font-family: PlayfairDisplay;
+        font-size: 2.3em;
+        font-weight: bold;
+        color: #000;
+        margin: 25px 0;
+      }
+      .dificuldade{
+        float: left;
+        margin-right: 10px;
+        
+      }
+      .nivel{
+        float: left;
+        display: inline-flex;
+      }
+      .star{
+        background: url('assets/Estrela.svg') no-repeat;
+        background-size: contain;
+        color:var(--lipstick);
+        width: 17px;
+        height: 11px;
+        float: left;
+      }
+      .dis{
+        opacity: 0.1;
+      }
+      .prato_hover{
+        background: #fff url('assets/Seta_direita.png') 10px center no-repeat;
+        width: 53%;
+        color: var(--lipstick);
+        font-size: 14px;
+        padding-left: 25px;
+        line-height: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9999999;
+        text-align: left;
+        opacity: 0;
+      }
+     
+      .faixa{
+        background: url('assets/Elemento_5@2x.png') no-repeat bottom center;
+        width: 100%;
+        height: 20px;
+        margin-bottom: 80px;
+      }
+      
+      .previa{
+        width: 200px;
+        float: left;
+      }
+      .previa_g{
+        width: 550px;
+        float: right;
       }
     </style>
 
@@ -194,44 +377,58 @@
 
       <header>
           <div class="content">
+            <div class="adorno"></div>
             <main>
               <h1>Cook<span>fy</span></h1>
 
               <div class="busca">
                   <input type="text" class="palavra-chave" placeholder="Pesquise alguma receita">
-                  <button></button>
+                  <button class="lupa"></button>
               </div>
               
               <script>
               
                 
-                    fetch('https://uinames.com/api/?ext&region=brazil')
-                    .then((response) => {
-                      return response.json();
-                    })
-                    .then((uinames) => {
-                      
-                      document.getElementById("nome").innerHTML = uinames.name,
-                      document.getElementById("nome_c").innerHTML = uinames.name+' '+uinames.surname;  
-                      
-                    });
+                fetch('https://uinames.com/api/?ext&region=brazil')
+                .then((response) => {
+                  return response.json();
+                })
+                .then((uinames) => {
                   
-              </script>
+                  document.getElementById("nome").innerHTML = uinames.name,
+                  document.getElementById("nome_c").innerHTML = uinames.name +' '+ uinames.surname;
+                  var genero = uinames.gender;
+                  
+                  function sexo(){
+                    switch(genero) {
+                      case 'male':
+                       return "masc";
+                     case 'female':
+                       return "fem";
+                    }
+                    
+                  }
+                  var gender = sexo(genero);
+                  console.log(gender)                  
+                });
+              
+          </script>
          
            
             
               <a href="#" class="perfil_link" on="tap:sidebar1" >
-                <div class="foto">
-                  <amp-img
+                
+                  <amp-img id="foto_js" class="foto"
                     alt="Mariana"
-                    src="./assets/Avatar_feminino.png"
-                    width="60"
-                    height="60"
-                    layout="responsive"
+                    src="assets/Avatar_feminino.png"
+                    width="40"
+                    height="40"
+                    
                   >
                   </amp-img>
-                </div>
-                <div class="nome"><span id="nome"></span></div>
+                  
+                
+                <div class="nome" ><span id="nome"></span></div>
               </a>
               <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
                 <ul>
@@ -242,6 +439,7 @@
                   <li>Nav item 5</li>
                   <li>Nav item 6</li>
                 </ul>
+                O
               </amp-sidebar>
               
             </main>
@@ -259,24 +457,176 @@
                 </div>
               </div>
 
-              <div class="prato">
+            
+
+              <a class="prato" on="tap:quote-lb">
+                <div id="prato_hover">
+                  Ver Foto
+                </div>
                 <amp-img
                   alt="Mariana"
                   src="./assets/prato.jpg"
-                  width="225"
-                  height="180"
+                  width="265"
+                  height="220"
                 ></amp-img>
-              </div>
+              </a>
+
+              <amp-lightbox id="quote-lb" layout="nodisplay">
+                <div class="quote-bg"></div>
+                <div class="quote-content">
+                <button on="tap:quote-lb.close">X</button>
+                
+                </div>
+              </amp-lightbox>
 
             </div>
 
             
 
-
+            
           </div>
       </header>
       
      
+       <main id="ultimas">
+          <h2>
+            Experimente algumas<br>
+            das últimas receitas
+          </h2>
+          <amp-carousel id="carrossel" height="250" 
+          layout="fixed-height"
+          type="slides"
+          loop
+          controls
+          >
+          
+          <div class="item">
+            <div class="prato_hover">
+              Ver Foto
+            </div>
+              <div class="prato_content">
+                <amp-img src="photos/Sandwich.jpg"
+                  width="768"
+                  height="460"
+                  layout="responsive"
+                  alt="Sandwich">
+                </amp-img>
+              </div>
+
+              <div class="prato_txt">
+                  Adicionado a 2 dias
+
+                  <h3>Sanduíche de tomate com salada de ovos</h3>
+
+                  <div class="dificuldade">Fácil</div>
+                  
+                  <div class="nivel">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star dis"></div>
+                    <div class="star dis"></div>
+                    <div class="star dis"></div>
+                  </div>
+              </div>  
+            </div>
+
+            <div class="item">
+
+              <div class="prato_content">
+                
+                <amp-img src="photos/Iogurte.jpg"
+                  width="1"
+                  height="1.8"
+                  layout="responsive"
+                  alt="Sandwich">
+                </amp-img>
+              </div>
+
+              <div class="prato_txt">
+                  Adicionado a 2 dias
+
+                  <h3>Iogurte de fruta crocante</h3>
+
+                  <div class="dificuldade">Difícil</div>
+                  
+                  <div class="nivel">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star dis"></div>
+                  </div>
+              </div>  
+            </div>
+
+
+          </amp-carousel>
+        </main>
+       
+      <div class="faixa"></div>
+
+        <main>
+          <h2>Entre no mundo gastronômico</h2>
+
+
+          <div class="previa">
+            <button on="tap:carousel-with-preview.goToSlide(index=0)">
+              <amp-img
+                src="assets/Cozinha.jpg"
+                width="60"
+                height="40"
+                alt="apples"
+              ></amp-img>
+            </button>
+            <button on="tap:carousel-with-preview.goToSlide(index=1)">
+              <amp-img
+                src="/static/inline-examples/images/image2.jpg"
+                width="60"
+                height="40"
+                alt="lemons"
+              ></amp-img>
+            </button>
+            <button on="tap:carousel-with-preview.goToSlide(index=2)">
+              <amp-img
+                src="/static/inline-examples/images/image3.jpg"
+                width="60"
+                height="40"
+                alt="blueberries"
+              ></amp-img>
+            </button>
+          </div>
+
+          <amp-carousel
+            id="previa_g"
+            width="450"
+            height="300"
+            layout="responsive"
+            type="slides"
+          >
+            <amp-img
+              src="photos/Cozinha.jpg"
+              width="3"
+              height="0"
+              layout="responsive"
+              alt="apples"
+            ></amp-img>
+            <amp-img
+              src="/static/inline-examples/images/image2.jpg"
+              width="450"
+              height="300"
+              layout="responsive"
+              alt="lemons"
+            ></amp-img>
+            <amp-img
+              src="/static/inline-examples/images/image3.jpg"
+              width="450"
+              height="300"
+              layout="responsive"
+              alt="blueberries"
+            ></amp-img>
+          </amp-carousel>
+
+        </main>
 
   </body>
 </html>
