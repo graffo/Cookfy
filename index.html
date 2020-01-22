@@ -64,6 +64,7 @@
         }
         a{
           text-decoration: none;
+          color: inherit;
         }
         span{
           font-family: inherit;
@@ -75,7 +76,9 @@
           --white: #fff;
           --fair: PlayfairDisplay;
         }
-
+        img{
+          object-fit: cover;
+        }
         .amp-carousel-slide {
         opacity:0;
         }
@@ -87,12 +90,12 @@
       header{
         width: 100%;
         background-color: #ffdbbc;
+        position: relative;
       }
       header .content{
         max-width: 1120px;
         margin: 0 auto;
         padding: 50px 60px;
-        position: relative;
       }
       h1{
         font-family: PlayfairDisplay;
@@ -224,27 +227,9 @@
         top: 39%;
         left: 10%;
       }
-      .quote-bg{
-        width: 100%;        
-        height: 100%;
-        opacity: 0.73;
-        background-color: #7c7878;
-        position: relative;
-        z-index: 1;
-      }
-      .quote-content{
-        width: 730px;
-        border: 10px solid #797979;
-        min-height: 220px;
-        opacity: 1;
-        position: fixed;
-        top: 25%;
-        left: 15%;
-        z-index: 2;
-        background: #fff;
-      }
+     
       main{
-        width: 960px;
+        width: 780px;
         margin: 80px auto;
         
       }
@@ -309,8 +294,8 @@
         position: relative;
         box-shadow: 0 5px 5px 0 #797979;
         float: left;
-        width: 500px;
-        margin-right: 100px;
+        width: 450px;
+        margin-right: 50px;
         height: 240px;
         overflow: hidden;
         vertical-align: middle;
@@ -418,10 +403,10 @@
         border: solid 0.5px #f0f0f0;
         background-color: var(--white);
         color: #a19b9b;
-        width: 80%;
+        width: 64%;
         margin-bottom: 20px;
         box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0) ;
-        padding: 30px 0px 30px 135px;
+        padding: 30px 0px 30px 100px;
         font-family: var(--fair);
       }
       
@@ -438,28 +423,28 @@
       }
       .cozinha .itens{
         background: url('assets/Cozinha.png') no-repeat;
-        background-position: 95px center;
+        background-position: 55px center;
       }
       .cozinha .itens:hover, .cozinha amp-selector [option][selected]{
         background-image: url('assets/Cozinha_active.png')
       }
       .patisseria .itens{
         background: url('assets/Patisserie.png') no-repeat;
-        background-position: 95px center;
+        background-position: 55px center;
       }
       .patisseria .itens:hover{
         background-image: url('assets/Patisserie_active.png')
       }
       .drink .itens{
         background: url('assets/Drinks.png') no-repeat;
-        background-position: 95px center;
+        background-position: 55px center;
       }
       .drink .itens:hover{
         background-image: url('assets/Drinks_active.png')
       }
       
       #previa_g{
-        width: 580px;
+        width: 480px;
         float: right;
         height: 303px;
       }
@@ -474,7 +459,7 @@
         height: 305px;
       }
       #rodape{
-        width: 960px;
+        width: 780px;
         margin: 0 auto;
         padding-top: 150px;
       }
@@ -530,6 +515,205 @@
         margin-right: 0px;
       }
       .pin:hover{background-image: url('assets/Pinterest_active@2x.png');}
+
+      #perfil{
+        width: 380px;
+        padding: 50px 80px;
+        font-weight: bold;
+      }
+      .fechar{
+        color: #000;
+        font-size: 30px;
+        border: none;
+        background: none;
+        
+      }
+      #perfil_interno{
+        float: left;
+        width: 100%;
+        display: block;
+        margin-top: 80px;
+      }
+      #perfil_interno .foto{
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      #perfil_interno .nome{
+        float: left;
+        font-size: 22px;
+        font-family: var(--fair);
+        color: var(--lipstick);
+        line-height: 80px;
+        font-weight: bold;
+      }
+      #perfil_interno #email{
+        background:url('assets/Email.png') no-repeat center left;
+        color: #000;
+        font-size: 12px;
+        width: 100%;
+        padding-left: 20px;
+        margin: 15px 0;
+        clear: both;
+        display: block;
+      }
+      #perfil_interno #fone{
+        background:url('assets/Telefone.png') no-repeat center left;
+        color: #000;
+        font-size: 12px;
+        width: 100%;
+        padding-left: 20px;
+        margin: 15px 0 70px 0;
+      }
+      #plano_mensal{
+        float: left;
+        font-size: 26px;
+        font-family: var(--fair);
+      }
+      #restante{
+        float: right;
+        line-height: 40px;
+        font-size: 14px;
+      }
+      .barra{
+        border-radius: 20px;
+        width: 100%;
+        height: 15px;
+        background: #e8e8e8;
+        position: relative;
+        float: left;
+        display: block;
+        margin-top: 10px ;
+      }
+      .barra_cor{
+        width: 60%;
+        height: 15px;
+        border-radius: 20px;
+        display: block;
+        background: var(--lipstick);
+      }
+      #assinar{
+        border-radius: 30px;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        background-color: var(--lipstick);
+        font-family: var(--fair);
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 50px;
+        width: 100%;
+        float: left;
+        font-weight: normal;
+      }
+
+      #adm{
+        margin-top: 100px;
+        font-size: 12px;
+        height: 100px;
+        width: 100%;
+        float: left;
+      }
+      #adm a{
+        float: left;
+        width: 100%;
+        line-height: 20px;
+        line-height: 20px;
+        color: #c1bebe;
+        padding-left: 20px;
+        margin-bottom: 5px;
+      }
+      #adm a:hover{
+        color: #000;
+      }
+      .report{
+        background: url('assets/Bug.png') no-repeat left center;
+      }
+      .senha{
+        background: url('assets/Senha.png') no-repeat left center;
+      }
+      .sair{
+        background: url('assets/Sair.png') no-repeat left center;
+      }
+
+      .light-bg{
+        background: rgba(0,0,0,.8);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+        opacity: 0.8;
+      }
+      .light-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 860px;
+        height: 400px;
+        border: 16px solid #797979;
+        background-color: white;
+        z-index: 1002;
+        overflow: hidden;
+        
+      }
+      .light-content button{
+        position: absolute;
+        z-index: 500;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .light_img{
+        float:  left;
+        width: 60%;
+      }
+      .light_dir{
+        float: right;
+        width: 26%;
+        margin-top: 50px;
+        color: #555455;
+        font-size: 11px;
+        position: relative;
+        padding-right: 60px;
+        text-align: left;
+        line-height: 16px;
+      }
+      .light_dir h3{
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .light_dir h3 span{
+        color: var(--lipstick);
+      }
+      .light-action{
+        margin-top: 20px;
+        color: var(--lipstick);
+      }
+      .light-like{
+        border-radius: 19px;
+        border: solid 0.5px var(--lipstick);
+        background: url('assets/Like.png') no-repeat 13px center;
+        padding: 3px 20px 3px 24px;
+        text-align: center;
+        display: inline;
+      }
+      .light-ver{
+        display: inline;
+        background: url('assets/Seta_direita.png') no-repeat left center;
+        padding: 3px 20px 3px 14px;
+        margin-left: 20px;
+      }
     </style>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -574,37 +758,65 @@
                     
                   }
                   var gender = sexo(genero);
-                  console.log(gender)                  
+                  console.log(gender)    
+                  
+                  document.getElementById("nome_p").innerHTML = uinames.name +' '+ uinames.surname,
+                  document.getElementById("email").innerHTML = uinames.email,
+                  document.getElementById("fone").innerHTML = uinames.phone
                 });
+
+                
               
-          </script>
+              </script>
          
            
             
-              <a href="#" class="perfil_link" on="tap:sidebar1" >
+              <a href="#" class="perfil_link" on="tap:perfil" >
                 
                   <amp-img id="foto_js" class="foto"
                     alt="Mariana"
                     src="assets/Avatar_feminino.png"
                     width="20"
                     height="20"
-                    
                   >
                   </amp-img>
                   
                 
                 <div class="nome" ><span id="nome"></span></div>
               </a>
-              <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
-                <ul>
-                  <li>Nav item 1</li>
-                  <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
-                  <li>Nav item 3</li>
-                  <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
-                  <li>Nav item 5</li>
-                  <li>Nav item 6</li>
-                </ul>
-                O
+
+              <amp-sidebar id="perfil" layout="nodisplay" side="right">
+                <a class="fechar" href="#" on="tap:perfil.close">X</a>
+                
+                <div id="perfil_interno">
+                  <amp-img id="foto_js" class="foto"
+                    alt="Mariana"
+                    src="assets/Avatar_feminino@2x.png"
+                    width="60"
+                    height="60"
+                  >
+                  </amp-img>
+                
+                  <div class="nome" ><span id="nome_p"></span></div>
+                  <br><br><br>
+                  <div id="email"></div>
+                  <div id="fone"></div>
+
+                  <div id="plano_mensal">Plano Mensal</div>
+                  <div id="restante">16 dias restantes</div>
+                  <div class="barra">
+                    <div class="barra_cor"></div>
+                  </div>
+
+                  <a href="" id="assinar">Assinar plano anual</a>
+
+                  <div id="adm">
+                    <a href="" class="report">Reportar bug ou abuso</a>
+                    <a href="" class="senha">Alterar sua senha</a>
+                    <a href="" class="sair">Sair</a>
+                  </div>
+              </div>
+
               </amp-sidebar>
               
            
@@ -624,7 +836,7 @@
 
             
 
-              <a class="prato" on="tap:quote-lb">
+              <a class="prato" on="tap:light-lb">
                 <div id="prato_hover">
                   Ver Foto
                 </div>
@@ -636,10 +848,33 @@
                 ></amp-img>
               </a>
 
-              <amp-lightbox id="quote-lb" layout="nodisplay">
-                <div class="quote-bg"></div>
-                <div class="quote-content">
-                <button on="tap:quote-lb.close">X</button>
+              <amp-lightbox id="light-lb" layout="nodisplay">
+                <div class="light-bg"></div>
+                
+                <div class="light-content">
+
+                  <div class="light_img">
+                    <amp-img
+                      alt="Mariana"
+                      src="photos/Header.jpg"
+                      width="530"
+                      height="400"
+                    ></amp-img>
+                  </div>
+
+                  <div class="light_dir">
+                    <h3>
+                      Ceviche de peixe branco<br>
+                      <span>Por Michel Filipe</span>
+                    </h3>
+                    O ceviche é um prato de origem peruana feito com cubos de peixe que são cozidos em uma solução ácida, geralmente caldo de limão. Quando o peixe em contato com o limão, um processo químico é iniciado: a proteína do peixe se desnatura e a textura do peixe muda e o peixe fica mais saboroso. O segredo para fazer um bom ceviche é a qualidade do ingrediente principal: o peixe tem que estar bem fresco. Esse prato peruano pode ser feito com salmão, camarões e alguns contam até com manga e abacate, e o tradicional é preparado com peixe branco.  
+                    <div class="light-action">
+                      <a href="#" class="light-like">Curtir</a>
+                      <a href="#" class="light-ver">Ver receita</a>
+                    </div>
+                  </div>
+                
+                  <button on="tap:light-lb.close">X</button>
                 
                 </div>
               </amp-lightbox>
@@ -672,7 +907,7 @@
               <div class="prato_content">
                 <amp-img src="photos/Sandwich.jpg"
                   width="480"
-                  height="240"
+                  height="260"
                   layout="responsive"
                   alt="Sandwich">
                 </amp-img>
