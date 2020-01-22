@@ -109,7 +109,7 @@
       }
 
       .busca{
-        width: 586px;
+        width: 45%;
         height: 40px;
         border-radius: 20px;
         box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
@@ -146,7 +146,7 @@
         font-size: 14px;
         font-weight: bold;
         float: right;
-        line-height: 60px;
+        line-height: 40px;
         margin-right: 15px;
       
      }
@@ -468,7 +468,7 @@
       }
 
       footer{
-        background: url('assets/Rodape@2x.png') no-repeat;
+        background: url('assets/Rodape@2x.png') no-repeat center top;
         float: left;
         width: 100%;
         height: 305px;
@@ -476,6 +476,7 @@
       #rodape{
         width: 960px;
         margin: 0 auto;
+        padding-top: 150px;
       }
       .logo{
         font-family: PlayfairDisplay;
@@ -483,13 +484,52 @@
         font-weight: bold;
         line-height: 1.32;
         color: #000000;
-        float: left;
-        
+        display: inline;
       }
       .logo span {
-        color:var(--lipstick);
-        
+        color:var(--lipstick);  
       }
+      .copy{
+        display: inline;
+        font-size: 12px;
+        margin: 0 0 0 20px;
+      }
+
+      #social{
+        float: right;
+      }
+      #social a {
+        width: 29px;
+        height: 29px;
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .fb{
+        background: url('assets/Fb@2x.png') no-repeat;
+
+      }
+      .fb:hover{background-image: url('assets/Fb_active@2x.png');}
+      .ig{
+        background: url('assets/IG@2x.png') no-repeat;
+
+      }
+      .ig:hover{background-image: url('assets/IG_active@2x.png');}
+      .tw{
+        background: url('assets/Twitter@2x.png') no-repeat;
+
+      }
+      .tw:hover{background-image: url('assets/Twitter_active@2x.png');}
+      .in{
+        background: url('assets/Linkedin@2x.png') no-repeat;
+
+      }
+      .in:hover{background-image: url('assets/Linkedin_active@2x.png');}
+      .pin{
+        background: url('assets/Pinterest@2x.png') no-repeat;
+        display: inline-block;
+        margin-right: 0px;
+      }
+      .pin:hover{background-image: url('assets/Pinterest_active@2x.png');}
     </style>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -546,8 +586,8 @@
                   <amp-img id="foto_js" class="foto"
                     alt="Mariana"
                     src="assets/Avatar_feminino.png"
-                    width="40"
-                    height="40"
+                    width="20"
+                    height="20"
                     
                   >
                   </amp-img>
@@ -737,7 +777,17 @@
       
       <footer>
         <div id="rodape">
-          <div class="logo">Cook<span>fy</span>fy</div>
+          <div class="logo">Cook<span>fy</span></div>
+          <div class="copy">© 2020 Cookfy.</div>
+          
+          <div id="social">
+            <a href="" class="fb"></a>
+            <a href="" class="ig"></a>
+            <a href="" class="tw"></a>
+            <a href="" class="in"></a>
+            <a href="" class="pin"></a>
+          </div>
+
         </div>
       </footer>
   </body>
