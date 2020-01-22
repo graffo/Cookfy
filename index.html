@@ -174,9 +174,12 @@
       .saudacao{
         float: left;
         font-size: 3em;
+        padding-top: 15px;
+      }
+      #suadacao_js{
+        
         font-family: PlayfairDisplay;
         font-weight: bold;
-        padding-top: 15px;
       }
       .saudacao span{
         color: var(--lipstick);
@@ -746,19 +749,30 @@
                   
                   document.getElementById("nome").innerHTML = uinames.name,
                   document.getElementById("nome_c").innerHTML = uinames.name +' '+ uinames.surname;
+                  
                   var genero = uinames.gender;
                   
-                  function sexo(){
-                    switch(genero) {
-                      case 'male':
-                       return "masc";
-                     case 'female':
-                       return "fem";
-                    }
-                    
+                  switch (genero) {
+                      case "male" :
+                      document.getElementById("suadacao_js").innerHTML = "Bem Vindo de volta";
+                      break;
+                      default :
+                      document.getElementById("suadacao_js").innerHTML = "Bem Vindo de volta"
                   }
-                  var gender = sexo(genero);
-                  console.log(gender)    
+                  
+                  var avatar = uinames.gender;
+                  switch (avatar) {
+                      case "male" :
+                      document.getElementById("foto_js").src = ("assets/Avatar_masculino.png");
+                      break;
+                      default :
+                      document.getElementById("foto_js").src = ("assets/Avatar_feminino.png");
+                  }  
+                  
+                  console.log(avatar)
+                  
+                  
+                  
                   
                   document.getElementById("nome_p").innerHTML = uinames.name +' '+ uinames.surname,
                   document.getElementById("email").innerHTML = uinames.email,
@@ -771,7 +785,7 @@
          
            
             
-              <a href="#" class="perfil_link" on="tap:perfil" >
+              <a  class="perfil_link" on="tap:perfil" >
                 
                   <amp-img id="foto_js" class="foto"
                     alt="Mariana"
@@ -824,7 +838,7 @@
             <div class="receita">
 
               <div class="saudacao">
-                Bem Vinda de volta</br>
+                <div id="suadacao_js"> Bem Vinda de volta</div>
                 <span id="nome_c"></span>
 
                 <div class="info_receita">
